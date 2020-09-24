@@ -15,12 +15,37 @@
 
 """
 
-def main():
+a = "tttas"
+b = "learn"
+
+
+
+if type(a) == str and type(b) == str:
+       
+    
+
+
+    def comparator(a,b):
+        if len(a) == len(b):
+            return("1")
+        elif len(a) > len(b):
+            return("2")
+        elif len(a) != len(b) and b == 'learn':
+            return('3')
+    
+
+    print(comparator(a,b))
+
+
+else:
+    print('0')    
+  
+
     """
     Эта функция вызывается автоматически при запуске скрипта в консоли
     В ней надо заменить pass на ваш код
     """
-    pass
     
-if __name__ == "__main__":
-    main()
+    
+if __name__ == "__comparatorn__":
+    comparator(a, b)

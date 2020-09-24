@@ -39,15 +39,17 @@ def greet_user(bot, update):
 
 def talk_to_me(bot, update):
     user_text = update.message.text 
+  
     print(user_text)
     update.message.reply_text(user_text)
  
 
 def main():
-    mybot = Updater('1377229958:AAGUCjnCXWzyDTmTnPfQ7SipBn52kTztbK0', use_context=True, request_kwargs=PROXY)
-  
+    mybot = Updater(settings.API_KEY, request_kwargs=PROXY)
+    
     dp = mybot.dispatcher
-    dp.add_handler(CommandHandler("start","planet", greet_user))
+    dp.add_handler(CommandHandler("planet", greet_user))
+
     dp.add_handler(MessageHandler(Filters.text, talk_to_me))
     
     mybot.start_polling()
